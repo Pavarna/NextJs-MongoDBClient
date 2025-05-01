@@ -1,7 +1,7 @@
 //import { useEffect, useState } from "react";
 import { MongoClient } from "mongodb";
 import MeetupList from "../components/meetups/MeetupList";
-import Head from "next/Head";
+import Head from "next/head";
 import { Fragment } from "react";
 
 const DUMMY_MEETUPS = [
