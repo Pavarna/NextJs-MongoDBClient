@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray(); // first {} for filter criteria, then second{} to define which field, here it states only id property with 1
   client.close();
   return {
-    fallback: false, // if it is false then 404, if this is true this helps to show the pages instead of 404 page and helps with generate with missing ids
+    fallback: 'blocking', // if it is false then 404, if this is true this helps to show the pages instead of 404 page immediatey and if it is blocking it helps with generation of file with missing ids
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
